@@ -30,3 +30,26 @@ print(a, b, c, d)
 # 使用 * 解析
 *a, b, c = [1, 2, 3, 4]
 print(a, b, c)
+a, b, *c = [1, 2, 3, 4, 5]
+print(a, b, *c)
+
+# 应用1：使用unpack功能实现复杂序列的循环
+lst3 = [
+    ("first", 1, 4),
+    ("second", "hello")
+]
+
+
+def Sum(a, b):
+    return a + b
+
+
+def prit(s):
+    print(s)
+
+
+for key, *args in lst3:
+    if key == "first":
+        print(Sum(*args))
+    if key == "second":
+        prit(*args)
